@@ -63,6 +63,7 @@ $env:NEXT_PUBLIC_API_URL="https://system.noviq.solutions/api"; npm run build -w 
 ```
 1. ارفع **محتويات** `apps/web/out/` ← إلى `ROOT/` مباشرة.
 2. ارفع `apps/web/hostinger.htaccess` ← باسم `ROOT/.htaccess`.
+   ⚠️ الـ File Manager بيتجاهل ملفات النقطة أثناء الرفع — لو ملقيتوش بعد الرفع، اعمله يدويًا: New File باسم `.htaccess` والصق محتوى `hostinger.htaccess` جواه (من غيره الصفحات هترجع 404).
 3. افتح `https://system.noviq.solutions/login` وسجّل دخول.
 
 ## المرحلة 5 — تحقق ما بعد الرفع
