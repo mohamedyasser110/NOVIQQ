@@ -1,38 +1,34 @@
 # Company Operating System — Private Internal Web App
 
-> Modular monolith for a 5-founder software company. Projects + Tasks + Finance + Treasury + Approvals + Audit in one coherent system. **Not a UI prototype.**
+> Modular system for a software company. Projects + Tasks + Finance + Treasury + Approvals + Audit in one coherent system. **Not a UI prototype.**
 
-**Stack (Phase 0):** Next.js 14 + TypeScript (apps/web) · NestJS 10 + TypeScript REST (apps/api) · Prisma ORM + **SQLite (local/dev)** → PostgreSQL (production switch) · Tailwind CSS
+**Stack:** Next.js 14 + TypeScript (apps/web, static-export ready) · **PHP 8.1+ native REST, zero dependencies (apps/php-api)** · **MySQL (production) / SQLite (local dev)** · Tailwind CSS
 
-**Repo root:** `C:\Downloads\team mangment` (canonical spec: `MASTER_SPEC.md` + `docs/MASTER_SPEC.md`)
+**تشغيل على جهاز جديد؟** افتح [`SETUP.md`](SETUP.md) — من الصفر لحد تسجيل الدخول خطوة بخطوة.
+**الرفع على استضافة؟** افتح [`docs/HOSTINGER_DEPLOY.md`](docs/HOSTINGER_DEPLOY.md).
 
 ## Quick start (Windows PowerShell)
 
 ```powershell
-# 1. API
-cd 'C:\Downloads\team mangment\apps\api'
+git clone https://github.com/mohamedyasser110/NOVIQQ.git
+cd NOVIQQ
 npm install
-npx prisma generate
-npx prisma migrate dev --name init
-npm run seed
-npm run start:dev   # http://localhost:4100/api/health
-
-# 2. Web (new terminal)
-cd 'C:\Downloads\team mangment\apps\web'
-npm install
-npm run dev         # http://localhost:3100
+php apps/php-api/database/migrate.php --fresh
+php apps/php-api/database/seed.php
+.\RUN.BAT   # API http://localhost:4100/api/health · WEB http://localhost:3100
+# login: founder1@example.test / ChangeMe123!
 ```
 
-See `docs/IMPLEMENTATION_PLAN.md` for phases and `docs/DECISIONS.md` for every reversible default.
+See `docs/` for spec, plans, testing and deployment notes.
 
 ## Layout
 
 ```
-apps/api/        # NestJS modular monolith (19 modules, Prisma, Swagger)
-apps/web/        # Next.js App Router, Tailwind, API client
+apps/php-api/    # PHP native API (20 modules, JWT, double-entry ledger, 99 smoke tests)
+apps/web/        # Next.js App Router, Tailwind, API client (static export -> out/)
 packages/shared/ # money utils (integer minor units), permission keys, zod schemas
-prisma/          # canonical schema (SQLite dev, Postgres prod)
-docs/            # MASTER_SPEC + IMPLEMENTATION_PLAN + DECISIONS + TESTING + DEPLOYMENT
+docs/            # specs + plans + HOSTINGER_DEPLOY + TESTING
+SETUP.md         # fresh-machine setup guide
 ```
 
 ## Rules that are never broken
