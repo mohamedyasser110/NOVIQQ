@@ -1,0 +1,18 @@
+{
+  "name": "company-os",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "npm@10.9.3",
+  "workspaces": ["apps/web", "packages/shared"],
+  "scripts": {
+    "dev:api": "php -S 127.0.0.1:4100 -t apps/php-api/public apps/php-api/server.php",
+    "dev:web": "npm run dev -w apps/web",
+    "build": "npm run build -w apps/web",
+    "test": "npm run test -w packages/shared",
+    "php:serve": "php -S 127.0.0.1:4100 -t apps/php-api/public apps/php-api/server.php",
+    "php:migrate": "php apps/php-api/database/migrate.php --fresh",
+    "php:seed": "php apps/php-api/database/seed.php",
+    "php:wipe": "php apps/php-api/database/wipe.php",
+    "php:test": "php apps/php-api/tests/run.php"
+  }
+}

@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --navy: #0b1f4d;
+  --brand: #1d4ed8;
+  --accent: #f97316;
+  --paper: #f4f6fb;
+}
+
+body {
+  font-family: Cairo, Inter, system-ui, sans-serif;
+  background: var(--paper);
+  color: #0f1f3d;
+}
+
+code {
+  background: rgba(29, 78, 216, 0.08);
+  padding: 1px 5px;
+  border-radius: 6px;
+}
+
+/* thin styled scrollbar for a polished feel */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #c3cede; border-radius: 8px; border: 2px solid #f4f6fb; }
+::-webkit-scrollbar-thumb:hover { background: #9fb0cc; }
+
+input, select, button { font-family: inherit; }
+input:focus, select:focus {
+  outline: 2px solid rgba(249, 115, 22, 0.45);
+  outline-offset: 0;
+}

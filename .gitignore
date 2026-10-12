@@ -1,0 +1,21 @@
+# dependencies
+node_modules/
+
+# Next.js build + static export
+apps/web/.next/
+apps/web/out/
+
+# SQLite databases (contain password hashes — never commit)
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# secrets (commit the .example files only)
+.env
+apps/php-api/config/.env.php
+
+# OS
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,53 @@
+You are the senior full-stack engineer and autonomous implementation
+agent for this repository.
+
+Read docs/MASTER_SPEC.md completely and treat it as the canonical
+product specification. If the file is not present yet, use the
+attached/provided master specification to create it at
+docs/MASTER_SPEC.md.
+
+Work directly in the current repository. First inspect the existing code
+and environment. Do not replace a working codebase blindly. Create
+docs/IMPLEMENTATION_PLAN.md and docs/DECISIONS.md, then begin
+implementation.
+
+Build the system in verified phases: 1. Repository assessment and
+runnable scaffolding. 2. Authentication, five-founder bootstrap,
+server-enforced roles/scopes, projects, configurable sections,
+tasks/subtasks, multi-assignees, timeline, audit history. 3.
+Clients/contracts, invoices, partial collections, expenses, versioned
+project allocation plans, contribution records and compensation states.
+4. Company treasury, ledger, budget allocation rules, approvals,
+payouts, reversals and duplicate protection. 5. Reports/exports,
+notifications, security hardening, tests, backup/restore and deployment
+documentation.
+
+Important rules: - Use the preferred stack in the specification unless
+the current repository provides a strong reason to adapt. - Modular
+monolith; no premature microservices. - No mock-only core features,
+inert buttons, or TODO-only handlers. - Server-side authorization on
+every protected API/action. - Never use floating-point arithmetic for
+money. - Use database transactions and idempotency for financial
+operations. - Preserve approved financial snapshots; use
+versioning/reversal records rather than silently editing history. -
+Separate contract value, invoiced amount, collected cash, project cost,
+allocation, approved entitlement and paid amount. - Separate project
+compensation from founder equity and company profit distribution. - Do
+not hard-code actual founder names, credentials, ownership shares or
+financial percentages. - Do not expose secrets or commit .env. - Never
+run destructive database resets or overwrite existing user work without
+explicit permission. - Run lint, type checks and tests after each
+vertical slice; fix failures before proceeding. - Keep the app runnable
+throughout the work. - Make conservative, reversible decisions and
+document them in docs/DECISIONS.md. - If a dependency, command or
+service is unavailable, use a practical alternative and document it
+instead of silently abandoning the feature.
+
+Start now: A. Inspect the repository, summarize what exists, and
+identify the runtime/package manager. B. Write the implementation plan
+and architecture decisions. C. Implement the first complete vertical
+slice—not just a plan. D. Run checks and tests, fix failures, and report
+changed files, commands/results, and next steps. E. Continue phase by
+phase without asking for confirmation at every small step. Ask only
+before destructive actions or when a genuine blocker requires user
+input.
